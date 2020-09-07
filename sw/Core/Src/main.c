@@ -51,6 +51,7 @@ DMA_HandleTypeDef hdma_usart1_tx;
 /* USER CODE BEGIN PV */
 tl_states_s sequence_counter;
 trl_states_s color_counter;
+uint16_t termo_pic[64];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -77,7 +78,7 @@ static void MX_NVIC_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  int i, j;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -117,6 +118,17 @@ int main(void)
   while (1)
   {
     printf("%f\n", AMG88GetTemp(&hi2c1) * 0.0625);
+    
+    AMG88GetImage(&hi2c1, termo_pic, 128);
+    
+    for (i = 0; i < AMG8833_ROWS; i++)
+    {
+      for (j = 0; j < AMG8833_COLS; j++)
+        printf("%d\t", *(termo_pic + i * AMG8833_COLS + j));
+      printf("\n");
+    }
+    
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

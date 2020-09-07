@@ -19,6 +19,7 @@
 
 #endif /* AMG8833_DRIVER_H_ */
 
-
-uint16_t AMG88GetImage(I2C_HandleTypeDef * i2cHandle);
+uint16_t AMG88GetImage(I2C_HandleTypeDef * i2cHandle, 
+                        uint16_t * pic, 
+                        uint16_t pic_size);
 uint16_t AMG88GetTemp(I2C_HandleTypeDef * i2cHandle);

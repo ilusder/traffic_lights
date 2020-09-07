@@ -97,7 +97,8 @@ void Error_Handler(void);
 #define TL_GREEN2_Pin GPIO_PIN_12
 #define TL_GREEN2_GPIO_Port GPIOC
 /* USER CODE BEGIN Private defines */
-
+#define AMG8833_ROWS 8
+#define AMG8833_COLS 8
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
