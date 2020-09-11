@@ -65,6 +65,8 @@ typedef enum trl_states
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -99,6 +101,13 @@ void Error_Handler(void);
 /* USER CODE BEGIN Private defines */
 #define AMG8833_ROWS 8
 #define AMG8833_COLS 8
+
+
+#define WS2812B_LED_0 3
+#define WS2812B_LED_1 6
+
+#define WS2812B_LEDS 8
+#define WS2812B_BIT_PER_LEDS 24
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

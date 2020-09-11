@@ -43,6 +43,8 @@
 I2C_HandleTypeDef hi2c1;
 
 TIM_HandleTypeDef htim6;
+TIM_HandleTypeDef htim16;
+TIM_HandleTypeDef htim17;
 
 UART_HandleTypeDef huart1;
 DMA_HandleTypeDef hdma_usart1_rx;
@@ -61,6 +63,8 @@ static void MX_DMA_Init(void);
 static void MX_TIM6_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_TIM17_Init(void);
+static void MX_TIM16_Init(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -103,6 +107,8 @@ int main(void)
   MX_TIM6_Init();
   MX_USART1_UART_Init();
   MX_I2C1_Init();
+  MX_TIM17_Init();
+  MX_TIM16_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
@@ -110,6 +116,8 @@ int main(void)
   sequence_counter = TL_OFF;
   color_counter = OFF;
   HAL_GPIO_WritePin(GPIOC, TL_RED1_Pin|TL_YELLOW1_Pin|TL_GREEN1_Pin, GPIO_PIN_SET);
+  HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
+  HAL_TIM_Base_Start_IT(&htim16);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -154,7 +162,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL12;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL4;
   RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -165,10 +173,10 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV2;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
   {
     Error_Handler();
   }
@@ -271,6 +279,100 @@ static void MX_TIM6_Init(void)
   /* USER CODE BEGIN TIM6_Init 2 */
 
   /* USER CODE END TIM6_Init 2 */
+
+}
+
+/**
+  * @brief TIM16 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM16_Init(void)
+{
+
+  /* USER CODE BEGIN TIM16_Init 0 */
+
+  /* USER CODE END TIM16_Init 0 */
+
+  /* USER CODE BEGIN TIM16_Init 1 */
+
+  /* USER CODE END TIM16_Init 1 */
+  htim16.Instance = TIM16;
+  htim16.Init.Prescaler = 1-1;
+  htim16.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim16.Init.Period = 9;
+  htim16.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim16.Init.RepetitionCounter = 0;
+  htim16.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim16) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM16_Init 2 */
+
+  /* USER CODE END TIM16_Init 2 */
+
+}
+
+/**
+  * @brief TIM17 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM17_Init(void)
+{
+
+  /* USER CODE BEGIN TIM17_Init 0 */
+
+  /* USER CODE END TIM17_Init 0 */
+
+  TIM_OC_InitTypeDef sConfigOC = {0};
+  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
+
+  /* USER CODE BEGIN TIM17_Init 1 */
+
+  /* USER CODE END TIM17_Init 1 */
+  htim17.Instance = TIM17;
+  htim17.Init.Prescaler = 1 - 1;
+  htim17.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim17.Init.Period = 9;
+  htim17.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim17.Init.RepetitionCounter = 0;
+  htim17.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim17) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_Init(&htim17) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 4;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
+  sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+  if (HAL_TIM_PWM_ConfigChannel(&htim17, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
+  sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
+  sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
+  sBreakDeadTimeConfig.DeadTime = 0;
+  sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
+  sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
+  sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
+  if (HAL_TIMEx_ConfigBreakDeadTime(&htim17, &sBreakDeadTimeConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM17_Init 2 */
+
+  /* USER CODE END TIM17_Init 2 */
+  HAL_TIM_MspPostInit(&htim17);
 
 }
 
