@@ -108,6 +108,8 @@ void Error_Handler(void);
 
 #define WS2812B_LEDS 8
 #define WS2812B_BIT_PER_LEDS 24
+#define WS2812B_LED_BITS (WS2812B_LEDS * WS2812B_BIT_PER_LEDS)
+#define WS2812B_PERIOD_TIME (WS2812B_LEDS * WS2812B_BIT_PER_LEDS * 2 + 40)
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

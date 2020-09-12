@@ -64,8 +64,10 @@ extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
 extern tl_states_s sequence_counter;
 uint16_t wd1282_period = 0;
+uint8_t wd1282_led_counter;
 uint32_t wd1282_current_color;
 extern TIM_HandleTypeDef htim17;
+extern uint32_t led_color_ram[WS2812B_LEDS];
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -205,9 +207,34 @@ void TIM6_IRQHandler(void)
 void TIM16_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM16_IRQn 0 */
-  if (wd1282_period == 3) wd1282_period = 6;
-  else wd1282_period = 3;
-  __HAL_TIM_SET_COMPARE(&htim17, TIM_CHANNEL_1, wd1282_period);
+  if (wd1282_period < WS2812B_LED_BITS)
+  {
+    if (wd1282_period == 0) 
+    {
+      wd1282_led_counter = 0;
+      HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
+    }
+    if (!(wd1282_period % 24)) // if led bits finished
+    {
+      wd1282_current_color = led_color_ram[wd1282_led_counter++];
+    }
+    else
+    {
+      wd1282_current_color = wd1282_current_color >> 1; 
+    }
+    if (wd1282_current_color & 0x01)
+      __HAL_TIM_SET_COMPARE(&htim17, TIM_CHANNEL_1, 6);
+    else
+      __HAL_TIM_SET_COMPARE(&htim17, TIM_CHANNEL_1, 3);
+    wd1282_period++;
+  }
+  else   //delay 50 usec
+  {
+    if (wd1282_period == WS2812B_LED_BITS) HAL_TIM_PWM_Stop(&htim17, TIM_CHANNEL_1);
+    if (wd1282_period == WS2812B_PERIOD_TIME) wd1282_period = 0;
+    else wd1282_period++;
+  }
+  
   /* USER CODE END TIM16_IRQn 0 */
   HAL_TIM_IRQHandler(&htim16);
   /* USER CODE BEGIN TIM16_IRQn 1 */

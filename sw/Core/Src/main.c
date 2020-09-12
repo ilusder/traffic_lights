@@ -54,6 +54,7 @@ DMA_HandleTypeDef hdma_usart1_tx;
 tl_states_s sequence_counter;
 trl_states_s color_counter;
 uint16_t termo_pic[64];
+uint32_t led_color_ram[WS2812B_LEDS];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -83,7 +84,6 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
   int i, j;
-  uint32_t led_color_ram[WS2812B_LEDS];
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -116,8 +116,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
   sequence_counter = TL_OFF;
   color_counter = OFF;
+  
+  
   HAL_GPIO_WritePin(GPIOC, TL_RED1_Pin|TL_YELLOW1_Pin|TL_GREEN1_Pin, GPIO_PIN_SET);
-  HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
+  //HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
   HAL_TIM_Base_Start_IT(&htim16);
   /* USER CODE END 2 */
 
@@ -126,15 +128,20 @@ int main(void)
   
   while (1)
   {
-    printf("%f\n", AMG88GetTemp(&hi2c1) * 0.0625);
+    AMG88GetTemp(&hi2c1);
+    //printf("%f\n", AMG88GetTemp(&hi2c1) * 0.0625);
     
     AMG88GetImage(&hi2c1, termo_pic, 128);
     
     for (i = 0; i < AMG8833_ROWS; i++)
     {
       for (j = 0; j < AMG8833_COLS; j++)
-        printf("%d\t", *(termo_pic + i * AMG8833_COLS + j));
-      printf("\n");
+        if (i == 0)
+        {
+          led_color_ram[j] = WD1282_set_color((*(termo_pic + i * AMG8833_COLS + j) & 0xFF), 0, 0);
+        }
+        //printf("%d\t", *(termo_pic + i * AMG8833_COLS + j));
+      //printf("\n");
     }
     
     
@@ -462,7 +469,14 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+uint32_t WD1282_set_color(uint8_t red, uint8_t green, uint8_t blue)
+{
+  uint32_t result = 0;
+  result = (result | green) << 8;
+  result = (result | red) << 8;
+  result = (result | blue);
+  return result;
+}
 /* USER CODE END 4 */
 
 /**
