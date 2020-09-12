@@ -67,7 +67,7 @@ static void MX_TIM17_Init(void);
 static void MX_TIM16_Init(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
-
+uint32_t WD1282_set_color(uint8_t red, uint8_t green, uint8_t blue);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -83,6 +83,7 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
   int i, j;
+  uint32_t led_color_ram[WS2812B_LEDS];
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/

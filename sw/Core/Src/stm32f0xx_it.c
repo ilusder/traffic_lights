@@ -63,7 +63,8 @@ extern DMA_HandleTypeDef hdma_usart1_tx;
 extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
 extern tl_states_s sequence_counter;
-uint8_t wd1282_period;
+uint16_t wd1282_period = 0;
+uint32_t wd1282_current_color;
 extern TIM_HandleTypeDef htim17;
 /* USER CODE END EV */
 
