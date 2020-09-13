@@ -53,6 +53,7 @@ DMA_HandleTypeDef hdma_usart1_tx;
 /* USER CODE BEGIN PV */
 tl_states_s sequence_counter;
 trl_states_s color_counter;
+trl_states_s color_counter;
 uint16_t termo_pic[64];
 uint32_t led_color_ram[WS2812B_LEDS];
 /* USER CODE END PV */
@@ -128,20 +129,22 @@ int main(void)
   
   while (1)
   {
-    AMG88GetTemp(&hi2c1);
-    //printf("%f\n", AMG88GetTemp(&hi2c1) * 0.0625);
+    printf("%f\n", AMG88GetTemp(&hi2c1) * 0.0625);
     
     AMG88GetImage(&hi2c1, termo_pic, 128);
     
     for (i = 0; i < AMG8833_ROWS; i++)
     {
       for (j = 0; j < AMG8833_COLS; j++)
+      {
         if (i == 0)
         {
           led_color_ram[j] = WD1282_set_color((*(termo_pic + i * AMG8833_COLS + j) & 0xFF), 0, 0);
         }
-        //printf("%d\t", *(termo_pic + i * AMG8833_COLS + j));
-      //printf("\n");
+      
+        printf("%d\t", *(termo_pic + i * AMG8833_COLS + j));
+      }
+    printf("\n");
     }
     
     
