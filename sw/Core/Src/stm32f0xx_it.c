@@ -230,9 +230,9 @@ void TIM16_IRQHandler(void)
       if (wd1282_bit_counter < WS2812B_BIT_PER_LEDS)
       {
         if (wd1282_current_color & 0x01)
-          __HAL_TIM_SET_COMPARE(&htim17, TIM_CHANNEL_1, 6);
+          __HAL_TIM_SET_COMPARE(&htim17, TIM_CHANNEL_1, 2);
         else
-          __HAL_TIM_SET_COMPARE(&htim17, TIM_CHANNEL_1, 3);
+          __HAL_TIM_SET_COMPARE(&htim17, TIM_CHANNEL_1, 1);
         wd1282_bit_counter++;
         wd1282_current_color = wd1282_current_color >> 1;
       }
