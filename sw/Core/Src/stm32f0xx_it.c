@@ -72,7 +72,7 @@ extern tl_states_s sequence_counter;
 uint16_t wd1282_period = 0;
 uint8_t wd1282_led_counter;
 uint8_t wd1282_bit_counter;
-uint32_t wd1282_current_color;
+uint32_t wd1282_current_color = 40104;
 extern TIM_HandleTypeDef htim17;
 extern uint32_t led_color_ram[WS2812B_LEDS];
 ws_timer_states ws_state = WS_OFF;
@@ -200,6 +200,7 @@ void TIM6_IRQHandler(void)
   
   HAL_GPIO_TogglePin(GPIOC, LD3_Pin);
   
+  
   HAL_GPIO_TogglePin(GPIOC, TL_RED1_Pin|TL_YELLOW1_Pin|TL_GREEN1_Pin);
   
   /* USER CODE END TIM6_IRQn 0 */
@@ -215,44 +216,11 @@ void TIM6_IRQHandler(void)
 void TIM16_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM16_IRQn 0 */
-  if (wd1282_period < WS2812B_LED_BITS * WS2812B_LEDS)
-  {
-    if (wd1282_period == 0) 
-    {
-      wd1282_led_counter = 0;
-      wd1282_bit_counter = 0;
-      HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
-    }
-    if (wd1282_led_counter == 0)
-        wd1282_current_color = led_color_ram[wd1282_led_counter];
-    if (wd1282_led_counter < WS2812B_LEDS)
-    {
-      if (wd1282_bit_counter < WS2812B_BIT_PER_LEDS)
-      {
         if (wd1282_current_color & 0x01)
           __HAL_TIM_SET_COMPARE(&htim17, TIM_CHANNEL_1, 2);
         else
           __HAL_TIM_SET_COMPARE(&htim17, TIM_CHANNEL_1, 1);
-        wd1282_bit_counter++;
         wd1282_current_color = wd1282_current_color >> 1;
-      }
-      else
-        {
-          wd1282_bit_counter = 0;
-          wd1282_led_counter++;
-        }
-    }
-    wd1282_period++;
-  }
-  else
-  {
-    if (wd1282_period == WS2812B_LED_BITS * WS2812B_LEDS)
-      HAL_TIM_PWM_Stop(&htim17, TIM_CHANNEL_1);
-    if (wd1282_period < WS2812B_PERIOD_TIME)
-      wd1282_period++;
-    else wd1282_period = 0;
-    
-  }
  
   /* USER CODE END TIM16_IRQn 0 */
   HAL_TIM_IRQHandler(&htim16);

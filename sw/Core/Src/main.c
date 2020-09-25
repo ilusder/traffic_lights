@@ -121,7 +121,7 @@ int main(void)
   
   HAL_GPIO_WritePin(GPIOC, TL_RED1_Pin|TL_YELLOW1_Pin|TL_GREEN1_Pin, GPIO_PIN_SET);
   //HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
-  HAL_TIM_Base_Start_IT(&htim16);
+  //HAL_TIM_Base_Start_IT(&htim16);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -129,6 +129,7 @@ int main(void)
   
   while (1)
   {
+    
     printf("%f\n", AMG88GetTemp(&hi2c1) * 0.0625);
     
     AMG88GetImage(&hi2c1, termo_pic, 128);
