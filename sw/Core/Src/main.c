@@ -54,6 +54,7 @@ DMA_HandleTypeDef hdma_usart1_tx;
 tl_states_s sequence_counter;
 trl_states_s color_counter;
 uint16_t termo_pic[64];
+uint32_t led_color_ram[WS2812B_LEDS];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -67,7 +68,7 @@ static void MX_TIM17_Init(void);
 static void MX_TIM16_Init(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
-
+uint32_t WD1282_set_color(uint8_t red, uint8_t green, uint8_t blue);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -461,7 +462,14 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+uint32_t WD1282_set_color(uint8_t red, uint8_t green, uint8_t blue)
+{
+  uint32_t result = 0;
+  result = (result | green) << 8;
+  result = (result | red) << 8;
+  result = (result | blue);
+  return result;
+}
 /* USER CODE END 4 */
 
 /**
