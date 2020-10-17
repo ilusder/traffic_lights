@@ -104220,6 +104220,426 @@
     "scope": null
   },
   {
+    "ID": "c:mlx90614_driver.h@761@macro@MLX90614_DRIVER_H_",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_DRIVER_H_",
+    "location": {
+      "column": "9",
+      "line": "16",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_DRIVER_H_",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@904@macro@MLX90614_DEFAULT_SA",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_DEFAULT_SA",
+    "location": {
+      "column": "9",
+      "line": "21",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_DEFAULT_SA",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@960@macro@MLX90614_OP_RAM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_OP_RAM",
+    "location": {
+      "column": "9",
+      "line": "23",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_OP_RAM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@991@macro@MLX90614_OP_EEPROM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_OP_EEPROM",
+    "location": {
+      "column": "9",
+      "line": "24",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_OP_EEPROM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1024@macro@MLX90614_OP_SLEEP",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_OP_SLEEP",
+    "location": {
+      "column": "9",
+      "line": "25",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_OP_SLEEP",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1105@macro@MLX90614_RAW1",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_RAW1",
+    "location": {
+      "column": "9",
+      "line": "28",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_RAW1",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1182@macro@MLX90614_RAW2",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_RAW2",
+    "location": {
+      "column": "9",
+      "line": "29",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_RAW2",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1259@macro@MLX90614_TAMB",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_TAMB",
+    "location": {
+      "column": "9",
+      "line": "30",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_TAMB",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1335@macro@MLX90614_TOBJ1",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_TOBJ1",
+    "location": {
+      "column": "9",
+      "line": "31",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_TOBJ1",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1413@macro@MLX90614_TOBJ2",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_TOBJ2",
+    "location": {
+      "column": "9",
+      "line": "32",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_TOBJ2",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1541@macro@MLX90614_TOMIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_TOMIN",
+    "location": {
+      "column": "9",
+      "line": "34",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_TOMIN",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1633@macro@MLX90614_TOMAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_TOMAX",
+    "location": {
+      "column": "9",
+      "line": "35",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_TOMAX",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1725@macro@MLX90614_PWMCTRL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_PWMCTRL",
+    "location": {
+      "column": "9",
+      "line": "36",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_PWMCTRL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1813@macro@MLX90614_TARANGE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_TARANGE",
+    "location": {
+      "column": "9",
+      "line": "37",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_TARANGE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1903@macro@MLX90614_EMISSIVITY",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_EMISSIVITY",
+    "location": {
+      "column": "9",
+      "line": "38",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_EMISSIVITY",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@1997@macro@MLX90614_CFG1",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_CFG1",
+    "location": {
+      "column": "9",
+      "line": "39",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_CFG1",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@2079@macro@MLX90614_SA",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_SA",
+    "location": {
+      "column": "9",
+      "line": "40",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_SA",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@2159@macro@MLX90614_ID1",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_ID1",
+    "location": {
+      "column": "9",
+      "line": "41",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_ID1",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@2242@macro@MLX90614_ID2",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_ID2",
+    "location": {
+      "column": "9",
+      "line": "42",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_ID2",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@2325@macro@MLX90614_ID3",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_ID3",
+    "location": {
+      "column": "9",
+      "line": "43",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_ID3",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@2408@macro@MLX90614_ID4",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_ID4",
+    "location": {
+      "column": "9",
+      "line": "44",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_ID4",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@2493@macro@MLX90614_DBG_OFF",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_DBG_OFF",
+    "location": {
+      "column": "9",
+      "line": "46",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_DBG_OFF",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@2521@macro@MLX90614_DBG_ON",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_DBG_ON",
+    "location": {
+      "column": "9",
+      "line": "47",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_DBG_ON",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@2548@macro@MLX90614_DBG_MSG_W",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_DBG_MSG_W",
+    "location": {
+      "column": "9",
+      "line": "48",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_DBG_MSG_W",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.h@2578@macro@MLX90614_DBG_MSG_R",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_DBG_MSG_R",
+    "location": {
+      "column": "9",
+      "line": "49",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
+    },
+    "name": "MLX90614_DBG_MSG_R",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.c@931@macro@MLX90614_ADDR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_ADDR",
+    "location": {
+      "column": "9",
+      "line": "19",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
+    },
+    "name": "MLX90614_ADDR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.c@973@macro@MLX90614_THEMP",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MLX90614_THEMP",
+    "location": {
+      "column": "9",
+      "line": "20",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
+    },
+    "name": "MLX90614_THEMP",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@mlx90614GetTemp",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "uint16_t mlx90614GetTemp(I2C_HandleTypeDef *)",
+    "location": {
+      "column": "10",
+      "line": "34",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
+    },
+    "name": "mlx90614GetTemp",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.c@1441@F@mlx90614GetTemp@ucRegVal",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "ucRegVal",
+    "location": {
+      "column": "14",
+      "line": "36",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
+    },
+    "name": "ucRegVal",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.c@1466@F@mlx90614GetTemp@i2c_status",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "i2c_status",
+    "location": {
+      "column": "22",
+      "line": "38",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
+    },
+    "name": "i2c_status",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
     "ID": "c:@htim6",
     "What": "Variable",
     "defdec": "Dec",

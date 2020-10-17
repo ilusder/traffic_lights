@@ -1216,14 +1216,17 @@
             <file>
                 <name>$PROJ_DIR$\..\Drivers\AMG8833\amg8833_driver.c</name>
             </file>
-            <file>
-                <name>$PROJ_DIR$\..\Drivers\AMG8833\amg8833_driver.h</name>
-            </file>
         </group>
         <group>
             <name>CMSIS</name>
             <file>
                 <name>$PROJ_DIR$\..\Core\Src\system_stm32f0xx.c</name>
+            </file>
+        </group>
+        <group>
+            <name>MLX90614</name>
+            <file>
+                <name>$PROJ_DIR$\..\Drivers\MLX90614\mlx90614_driver.c</name>
             </file>
         </group>
         <group>
