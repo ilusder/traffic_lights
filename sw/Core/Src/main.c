@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "amg8833_driver.h"
+#include "mlx90614_driver.h"  
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -127,8 +128,10 @@ int main(void)
   while (1)
   {
     printf("%f\n", AMG88GetTemp(&hi2c1) * 0.0625);
-    
+    printf("%f\n", mlx90614GetTemp(&hi2c1));
     AMG88GetImage(&hi2c1, termo_pic, 128);
+    
+    
     
     for (i = 0; i < AMG8833_ROWS; i++)
     {

@@ -17,8 +17,14 @@
 
 
 /* Private defines -----------------------------------------------------------*/
-/* DEFAULT SLAVE ADDRESS */
-#define MLX90614_DEFAULT_SA 0x5A
+
+
+//*****************************************************************************
+// mlx90614 Device I2C address
+//*****************************************************************************
+#define MLX90614_ADDR        (0x3a << 1)
+#define MLX90614_THEMP       0x01
+
 /* OPCODE DEFINES */
 #define MLX90614_OP_RAM		0x00
 #define MLX90614_OP_EEPROM	0x20
@@ -49,5 +55,9 @@
 #define MLX90614_DBG_MSG_R 1
 
 
+uint16_t mlx90614GetTemp(I2C_HandleTypeDef * i2cHandle);
+int32_t mlx90632_i2c_write(I2C_HandleTypeDef * i2cHandle, int16_t register_address, uint16_t value);
+int32_t mlx90632_i2c_read32(I2C_HandleTypeDef * i2cHandle, int16_t register_address, uint32_t *value);
+int32_t mlx90632_i2c_read(I2C_HandleTypeDef * i2cHandle, int16_t register_address, uint16_t *value);
 #endif /* MLX90614_DRIVER_H_ */
 
