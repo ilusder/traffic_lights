@@ -84,7 +84,8 @@ uint32_t WD1282_set_color(uint8_t red, uint8_t green, uint8_t blue);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  int i, j;
+  //int i, j;
+  float temp;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -118,8 +119,8 @@ int main(void)
   sequence_counter = TL_OFF;
   color_counter = OFF;
   HAL_GPIO_WritePin(GPIOC, TL_RED1_Pin|TL_YELLOW1_Pin|TL_GREEN1_Pin, GPIO_PIN_SET);
-  HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
-  HAL_TIM_Base_Start_IT(&htim16);
+  //HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
+  //HAL_TIM_Base_Start_IT(&htim16);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -127,17 +128,20 @@ int main(void)
   
   while (1)
   {
-    printf("%f\n", AMG88GetTemp(&hi2c1) * 0.0625);
-    printf("%f\n", mlx90614GetTemp(&hi2c1));
-    AMG88GetImage(&hi2c1, termo_pic, 128);
+    if ( HAL_OK == mlx90614GetTemp(&hi2c1, &temp))
+    {
+      printf("%f\n", temp);
+    //printf("%f\n", mlx90614GetTemp(&hi2c1));
+    //AMG88GetImage(&hi2c1, termo_pic, 128);
     
-    
+    /*
     
     for (i = 0; i < AMG8833_ROWS; i++)
     {
       for (j = 0; j < AMG8833_COLS; j++)
         printf("%d\t", *(termo_pic + i * AMG8833_COLS + j));
       printf("\n");
+    */
     }
     
     

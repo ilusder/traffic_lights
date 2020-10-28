@@ -109120,30 +109120,16 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2739@F@main@i",
+    "ID": "c:main.c@2754@F@main@temp",
     "What": "Variable",
     "defdec": "Def",
-    "display": "i",
+    "display": "temp",
     "location": {
-      "column": "7",
-      "line": "87",
+      "column": "9",
+      "line": "88",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
-    "name": "i",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@2739@F@main@j",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "j",
-    "location": {
-      "column": "10",
-      "line": "87",
-      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
-    },
-    "name": "j",
+    "name": "temp",
     "origin": "project_file",
     "scope": null
   },
@@ -109154,7 +109140,7 @@
     "display": "void SystemClock_Config(void)",
     "location": {
       "column": "6",
-      "line": "155",
+      "line": "159",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "SystemClock_Config",
@@ -109162,13 +109148,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4297@F@SystemClock_Config@RCC_OscInitStruct",
+    "ID": "c:main.c@4368@F@SystemClock_Config@RCC_OscInitStruct",
     "What": "Variable",
     "defdec": "Def",
     "display": "RCC_OscInitStruct",
     "location": {
       "column": "22",
-      "line": "157",
+      "line": "161",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "RCC_OscInitStruct",
@@ -109176,13 +109162,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4344@F@SystemClock_Config@RCC_ClkInitStruct",
+    "ID": "c:main.c@4415@F@SystemClock_Config@RCC_ClkInitStruct",
     "What": "Variable",
     "defdec": "Def",
     "display": "RCC_ClkInitStruct",
     "location": {
       "column": "22",
-      "line": "158",
+      "line": "162",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "RCC_ClkInitStruct",
@@ -109190,13 +109176,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4391@F@SystemClock_Config@PeriphClkInit",
+    "ID": "c:main.c@4462@F@SystemClock_Config@PeriphClkInit",
     "What": "Variable",
     "defdec": "Def",
     "display": "PeriphClkInit",
     "location": {
       "column": "28",
-      "line": "159",
+      "line": "163",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "PeriphClkInit",
@@ -109210,7 +109196,7 @@
     "display": "void MX_NVIC_Init(void)",
     "location": {
       "column": "13",
-      "line": "200",
+      "line": "204",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "MX_NVIC_Init",
@@ -109224,7 +109210,7 @@
     "display": "void MX_I2C1_Init(void)",
     "location": {
       "column": "13",
-      "line": "218",
+      "line": "222",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "MX_I2C1_Init",
@@ -109238,7 +109224,7 @@
     "display": "void MX_TIM6_Init(void)",
     "location": {
       "column": "13",
-      "line": "264",
+      "line": "268",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "MX_TIM6_Init",
@@ -109252,7 +109238,7 @@
     "display": "void MX_TIM16_Init(void)",
     "location": {
       "column": "13",
-      "line": "294",
+      "line": "298",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "MX_TIM16_Init",
@@ -109266,7 +109252,7 @@
     "display": "void MX_TIM17_Init(void)",
     "location": {
       "column": "13",
-      "line": "326",
+      "line": "330",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "MX_TIM17_Init",
@@ -109274,13 +109260,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@8975@F@MX_TIM17_Init@sConfigOC",
+    "ID": "c:main.c@9046@F@MX_TIM17_Init@sConfigOC",
     "What": "Variable",
     "defdec": "Def",
     "display": "sConfigOC",
     "location": {
       "column": "22",
-      "line": "333",
+      "line": "337",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "sConfigOC",
@@ -109288,13 +109274,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@9014@F@MX_TIM17_Init@sBreakDeadTimeConfig",
+    "ID": "c:main.c@9085@F@MX_TIM17_Init@sBreakDeadTimeConfig",
     "What": "Variable",
     "defdec": "Def",
     "display": "sBreakDeadTimeConfig",
     "location": {
       "column": "34",
-      "line": "334",
+      "line": "338",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "sBreakDeadTimeConfig",
@@ -109308,7 +109294,7 @@
     "display": "void MX_USART1_UART_Init(void)",
     "location": {
       "column": "13",
-      "line": "388",
+      "line": "392",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "MX_USART1_UART_Init",
@@ -109322,7 +109308,7 @@
     "display": "void MX_DMA_Init(void)",
     "location": {
       "column": "13",
-      "line": "421",
+      "line": "425",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "MX_DMA_Init",
@@ -109330,13 +109316,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@11683@F@MX_DMA_Init@tmpreg",
+    "ID": "c:main.c@11754@F@MX_DMA_Init@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",
     "location": {
       "column": "3",
-      "line": "425",
+      "line": "429",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "tmpreg",
@@ -109350,7 +109336,7 @@
     "display": "void MX_GPIO_Init(void)",
     "location": {
       "column": "13",
-      "line": "434",
+      "line": "438",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "MX_GPIO_Init",
@@ -109358,13 +109344,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@11844@F@MX_GPIO_Init@GPIO_InitStruct",
+    "ID": "c:main.c@11915@F@MX_GPIO_Init@GPIO_InitStruct",
     "What": "Variable",
     "defdec": "Def",
     "display": "GPIO_InitStruct",
     "location": {
       "column": "20",
-      "line": "436",
+      "line": "440",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "GPIO_InitStruct",
@@ -109372,13 +109358,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@11922@F@MX_GPIO_Init@tmpreg",
+    "ID": "c:main.c@11993@F@MX_GPIO_Init@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",
     "location": {
       "column": "3",
-      "line": "439",
+      "line": "443",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "tmpreg",
@@ -109386,13 +109372,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@11955@F@MX_GPIO_Init@tmpreg",
+    "ID": "c:main.c@12026@F@MX_GPIO_Init@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",
     "location": {
       "column": "3",
-      "line": "440",
+      "line": "444",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "tmpreg",
@@ -109400,13 +109386,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@11988@F@MX_GPIO_Init@tmpreg",
+    "ID": "c:main.c@12059@F@MX_GPIO_Init@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",
     "location": {
       "column": "3",
-      "line": "441",
+      "line": "445",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "tmpreg",
@@ -109420,7 +109406,7 @@
     "display": "uint32_t WD1282_set_color(uint8_t, uint8_t, uint8_t)",
     "location": {
       "column": "10",
-      "line": "468",
+      "line": "472",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "WD1282_set_color",
@@ -109428,13 +109414,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@13120@F@WD1282_set_color@result",
+    "ID": "c:main.c@13191@F@WD1282_set_color@result",
     "What": "Variable",
     "defdec": "Def",
     "display": "result",
     "location": {
       "column": "12",
-      "line": "470",
+      "line": "474",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "result",
@@ -109448,7 +109434,7 @@
     "display": "void Error_Handler(void)",
     "location": {
       "column": "6",
-      "line": "482",
+      "line": "486",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Core\\Src\\main.c"
     },
     "name": "Error_Handler",
@@ -109823,9 +109809,9 @@
     "ID": "c:@F@mlx90614GetTemp",
     "What": "Function",
     "defdec": "Dec",
-    "display": "uint16_t mlx90614GetTemp(I2C_HandleTypeDef *)",
+    "display": "int32_t mlx90614GetTemp(I2C_HandleTypeDef *, float *)",
     "location": {
-      "column": "10",
+      "column": "9",
       "line": "58",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
     },
@@ -109837,9 +109823,9 @@
     "ID": "c:@F@mlx90614GetTemp",
     "What": "Function",
     "defdec": "Dec",
-    "display": "uint16_t mlx90614GetTemp(I2C_HandleTypeDef *)",
+    "display": "int32_t mlx90614GetTemp(I2C_HandleTypeDef *, float *)",
     "location": {
-      "column": "10",
+      "column": "9",
       "line": "58",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.h"
     },
@@ -109935,9 +109921,9 @@
     "ID": "c:@F@mlx90614GetTemp",
     "What": "Function",
     "defdec": "Def",
-    "display": "uint16_t mlx90614GetTemp(I2C_HandleTypeDef *)",
+    "display": "int32_t mlx90614GetTemp(I2C_HandleTypeDef *, float *)",
     "location": {
-      "column": "10",
+      "column": "9",
       "line": "28",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
     },
@@ -109946,12 +109932,12 @@
     "scope": null
   },
   {
-    "ID": "c:mlx90614_driver.c@1168@F@mlx90614GetTemp@ucRegVal",
+    "ID": "c:mlx90614_driver.c@1181@F@mlx90614GetTemp@ucRegVal",
     "What": "Variable",
     "defdec": "Def",
     "display": "ucRegVal",
     "location": {
-      "column": "14",
+      "column": "10",
       "line": "30",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
     },
@@ -109960,7 +109946,21 @@
     "scope": null
   },
   {
-    "ID": "c:mlx90614_driver.c@1193@F@mlx90614GetTemp@i2c_status",
+    "ID": "c:mlx90614_driver.c@1204@F@mlx90614GetTemp@temp",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "temp",
+    "location": {
+      "column": "13",
+      "line": "31",
+      "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
+    },
+    "name": "temp",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:mlx90614_driver.c@1222@F@mlx90614GetTemp@i2c_status",
     "What": "Variable",
     "defdec": "Def",
     "display": "i2c_status",
@@ -109980,7 +109980,7 @@
     "display": "int32_t mlx90632_i2c_read(I2C_HandleTypeDef *, int16_t, uint16_t *)",
     "location": {
       "column": "9",
-      "line": "58",
+      "line": "62",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
     },
     "name": "mlx90632_i2c_read",
@@ -109988,13 +109988,13 @@
     "scope": null
   },
   {
-    "ID": "c:mlx90614_driver.c@2112@F@mlx90632_i2c_read@data",
+    "ID": "c:mlx90614_driver.c@2240@F@mlx90632_i2c_read@data",
     "What": "Variable",
     "defdec": "Def",
     "display": "data",
     "location": {
       "column": "10",
-      "line": "60",
+      "line": "64",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
     },
     "name": "data",
@@ -110002,13 +110002,13 @@
     "scope": null
   },
   {
-    "ID": "c:mlx90614_driver.c@2131@F@mlx90632_i2c_read@ret",
+    "ID": "c:mlx90614_driver.c@2259@F@mlx90632_i2c_read@ret",
     "What": "Variable",
     "defdec": "Def",
     "display": "ret",
     "location": {
       "column": "10",
-      "line": "61",
+      "line": "65",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
     },
     "name": "ret",
@@ -110022,7 +110022,7 @@
     "display": "int32_t mlx90632_i2c_read32(I2C_HandleTypeDef *, int16_t, uint32_t *)",
     "location": {
       "column": "9",
-      "line": "79",
+      "line": "83",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
     },
     "name": "mlx90632_i2c_read32",
@@ -110030,13 +110030,13 @@
     "scope": null
   },
   {
-    "ID": "c:mlx90614_driver.c@2830@F@mlx90632_i2c_read32@data",
+    "ID": "c:mlx90614_driver.c@2958@F@mlx90632_i2c_read32@data",
     "What": "Variable",
     "defdec": "Def",
     "display": "data",
     "location": {
       "column": "10",
-      "line": "81",
+      "line": "85",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
     },
     "name": "data",
@@ -110044,13 +110044,13 @@
     "scope": null
   },
   {
-    "ID": "c:mlx90614_driver.c@2849@F@mlx90632_i2c_read32@ret",
+    "ID": "c:mlx90614_driver.c@2977@F@mlx90632_i2c_read32@ret",
     "What": "Variable",
     "defdec": "Def",
     "display": "ret",
     "location": {
       "column": "10",
-      "line": "82",
+      "line": "86",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
     },
     "name": "ret",
@@ -110064,7 +110064,7 @@
     "display": "int32_t mlx90632_i2c_write(I2C_HandleTypeDef *, int16_t, uint16_t)",
     "location": {
       "column": "9",
-      "line": "101",
+      "line": "105",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
     },
     "name": "mlx90632_i2c_write",
@@ -110072,13 +110072,13 @@
     "scope": null
   },
   {
-    "ID": "c:mlx90614_driver.c@3585@F@mlx90632_i2c_write@data",
+    "ID": "c:mlx90614_driver.c@3713@F@mlx90632_i2c_write@data",
     "What": "Variable",
     "defdec": "Def",
     "display": "data",
     "location": {
       "column": "10",
-      "line": "103",
+      "line": "107",
       "path": "C:\\Users\\ilus\\svetofor\\traffic_lights\\sw\\Drivers\\MLX90614\\mlx90614_driver.c"
     },
     "name": "data",

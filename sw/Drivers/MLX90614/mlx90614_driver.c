@@ -25,10 +25,10 @@
 //! \return 0: Success, < 0: Failure.
 //
 //****************************************************************************
-uint16_t mlx90614GetTemp(I2C_HandleTypeDef * i2cHandle)
+int32_t mlx90614GetTemp(I2C_HandleTypeDef * i2cHandle, float * data)
 {
-    uint16_t ucRegVal;
-
+    char ucRegVal[2];
+    int32_t temp;
    HAL_StatusTypeDef i2c_status;
 
     /* Read the temp */
@@ -36,11 +36,15 @@ uint16_t mlx90614GetTemp(I2C_HandleTypeDef * i2cHandle)
                                   MLX90614_THEMP, I2C_MEMADD_SIZE_8BIT, 
                                  (uint8_t *) &ucRegVal, 2, 
                                  100);
-    if(i2c_status == HAL_OK)
+     if(i2c_status == HAL_OK)
     {
-        return ucRegVal;
+        temp = (ucRegVal[1] << 8 | ucRegVal[0]);
+        *data = temp * 0.02 - 273.15;
+        return HAL_OK;
     }
-    return(0);
+
+
+    return HAL_ERROR;
 }
 
 
