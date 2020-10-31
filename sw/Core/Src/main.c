@@ -131,26 +131,23 @@ int main(void)
   
   while (1)
   {
-    if ( HAL_OK == mlx90614GetTemp(&hi2c1, &temp))
+    if ( HAL_OK == mlx90614GetObjectTemp(&hi2c1, &temp))
     {
       sprintf(buffer_tx, "v%2d%d", (int) temp, (int)  ((temp - (int) temp) * 100));
       buffer_tx[5] = 0x77;
       buffer_tx[6] = 0x02;
       HAL_UART_Transmit(&huart1, (uint8_t *) buffer_tx, UART_STRING_LEN, 100);
       HAL_Delay(2000);
-      //printf("%f\n", temp);
-    //printf("%f\n", mlx90614GetTemp(&hi2c1));
-    //AMG88GetImage(&hi2c1, termo_pic, 128);
-    
-    /*
-    
-    for (i = 0; i < AMG8833_ROWS; i++)
+     }
+    if ( HAL_OK == mlx90614GetEnviromentTemp(&hi2c1, &temp))
     {
-      for (j = 0; j < AMG8833_COLS; j++)
-        printf("%d\t", *(termo_pic + i * AMG8833_COLS + j));
-      printf("\n");
-    */
-    }
+      sprintf(buffer_tx, "v%2d%d", (int) temp, (int)  ((temp - (int) temp) * 100));
+      buffer_tx[5] = 0x77;
+      buffer_tx[6] = 0x02;
+      HAL_UART_Transmit(&huart1, (uint8_t *) buffer_tx, UART_STRING_LEN, 100);
+      HAL_Delay(2000);
+     }
+
     
     
     /* USER CODE END WHILE */

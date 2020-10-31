@@ -18,28 +18,26 @@
 //****************************************************************************
 //
 //! \brief Read from the MLX90614 with defaults
-//!         Reads the CHIP ID.
+//!         Reads the data
 //!
 //! \param[in]    i2cHandle        the handle to the openned i2c device
 //!
 //! \return 0: Success, < 0: Failure.
 //
 //****************************************************************************
-int32_t mlx90614GetTemp(I2C_HandleTypeDef * i2cHandle, float * data)
+int32_t mlx90614GetTemp(I2C_HandleTypeDef * i2cHandle, uint8_t data_addr, uint16_t * data)
 {
     char ucRegVal[2];
-    int32_t temp;
    HAL_StatusTypeDef i2c_status;
 
     /* Read the temp */
     i2c_status = HAL_I2C_Mem_Read(i2cHandle, MLX90614_ADDR, 
-                                  MLX90614_THEMP, I2C_MEMADD_SIZE_8BIT, 
+                                  data_addr, I2C_MEMADD_SIZE_8BIT, 
                                  (uint8_t *) &ucRegVal, 2, 
                                  100);
      if(i2c_status == HAL_OK)
     {
-        temp = (ucRegVal[1] << 8 | ucRegVal[0]);
-        *data = temp * 0.02 - 273.15;
+        *data = (ucRegVal[1] << 8 | ucRegVal[0]);
         return HAL_OK;
     }
 
@@ -47,6 +45,49 @@ int32_t mlx90614GetTemp(I2C_HandleTypeDef * i2cHandle, float * data)
     return HAL_ERROR;
 }
 
+
+//****************************************************************************
+//
+//! \brief Read from the MLX90614 with defaults
+//!         Reads the object temperature.
+//!
+//! \param[in]    i2cHandle        the handle to the openned i2c device
+//!
+//! \return 0: Success, < 0: Failure.
+//
+//****************************************************************************
+int32_t mlx90614GetObjectTemp(I2C_HandleTypeDef * i2cHandle, float * data)
+{
+  uint16_t temp_read;
+  if (HAL_OK ==  mlx90614GetTemp(i2cHandle, MLX90614_OBJECT_THEMP, &temp_read))
+  {
+    *data = temp_read * 0.02 - 273.15;
+    return HAL_OK;
+  }
+  return HAL_ERROR;
+}
+
+
+//****************************************************************************
+//
+//! \brief Read from the MLX90614 with defaults
+//!         Reads the ambint temperature.
+//!
+//! \param[in]    i2cHandle        the handle to the openned i2c device
+//!
+//! \return 0: Success, < 0: Failure.
+//
+//****************************************************************************
+int32_t mlx90614GetEnviromentTemp(I2C_HandleTypeDef * i2cHandle, float * data)
+{
+  uint16_t temp_read;
+  if (HAL_OK ==  mlx90614GetTemp(i2cHandle, MLX90614_AMBIENT_THEMP, &temp_read))
+  {
+    *data = temp_read * 0.02 - 273.15;
+    return HAL_OK;
+  }
+  return HAL_ERROR;
+}
 
 //****************************************************************************
 //
