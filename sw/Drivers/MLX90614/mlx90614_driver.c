@@ -13,7 +13,7 @@
 
 #include "mlx90614_driver.h"
 
-
+#define MEASURE_CYCLES 50
 
 //****************************************************************************
 //
@@ -25,7 +25,7 @@
 //! \return 0: Success, < 0: Failure.
 //
 //****************************************************************************
-int32_t mlx90614GetTemp(I2C_HandleTypeDef * i2cHandle, uint8_t data_addr, uint16_t * data)
+int16_t mlx90614GetTemp(I2C_HandleTypeDef * i2cHandle, uint8_t data_addr, uint16_t * data)
 {
     char ucRegVal[2];
    HAL_StatusTypeDef i2c_status;
@@ -56,15 +56,28 @@ int32_t mlx90614GetTemp(I2C_HandleTypeDef * i2cHandle, uint8_t data_addr, uint16
 //! \return 0: Success, < 0: Failure.
 //
 //****************************************************************************
-int32_t mlx90614GetObjectTemp(I2C_HandleTypeDef * i2cHandle, float * data)
+int16_t mlx90614GetObjectTemp(I2C_HandleTypeDef * i2cHandle, float * data)
 {
   uint16_t temp_read;
-  if (HAL_OK ==  mlx90614GetTemp(i2cHandle, MLX90614_OBJECT_THEMP, &temp_read))
+  uint16_t max_temp = 0;
+  int i;
+  
+  for (i = 0; i < MEASURE_CYCLES; i++)
   {
-    *data = temp_read * 0.02 - 273.15;
-    return HAL_OK;
+    if (HAL_OK ==  mlx90614GetTemp(i2cHandle, MLX90614_OBJECT_THEMP, &temp_read))
+    {
+      if (!max_temp) max_temp = temp_read;
+      else
+      {
+        if (max_temp < temp_read) max_temp = temp_read;
+      }
+    }
+    else     
+      return HAL_ERROR;
+    HAL_Delay(50);
   }
-  return HAL_ERROR;
+  *data = max_temp * 0.02 - 273.15;
+  return HAL_OK;
 }
 
 
@@ -78,7 +91,7 @@ int32_t mlx90614GetObjectTemp(I2C_HandleTypeDef * i2cHandle, float * data)
 //! \return 0: Success, < 0: Failure.
 //
 //****************************************************************************
-int32_t mlx90614GetEnviromentTemp(I2C_HandleTypeDef * i2cHandle, float * data)
+int16_t mlx90614GetEnviromentTemp(I2C_HandleTypeDef * i2cHandle, float * data)
 {
   uint16_t temp_read;
   if (HAL_OK ==  mlx90614GetTemp(i2cHandle, MLX90614_AMBIENT_THEMP, &temp_read))
